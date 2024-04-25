@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encontrando Números Pares</title>
+</head>
+<body>
+
+<h2>Lista de Números Pares</h2>
+
+<p id="numerosPares"></p>
+
+<script>
+  const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  let numerosPares = [];
+
+  for (const numero of numeros) {
+    if (numero % 2 === 0) {
+      numerosPares.push(numero);
+    }
+  }
+
+  document.getElementById("numerosPares").textContent = "Números pares: " + numerosPares.join(", ");
+</script>
+
+</body>
+</html>

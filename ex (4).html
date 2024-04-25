@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada exericio quatro</title>
+</head>
+<body>
+
+<h2>Informe um número para ver sua tabuada:</h2>
+<input type="number" id="numbInput">
+<button onclick="calcTabuada()">Calcular</button>
+
+<div id="tabuada"></div>
+
+<script>
+    function calcTabuada() {
+    
+        var numero = document.getElementById("numbInput").value;
+
+      
+        numero = parseInt(numero);
+
+      
+        if (!isNaN(numero)) {
+        
+            document.getElementById("tabuada").innerHTML = "";
+
+            var tabuadaHTML = "<h2>Tabuada do número " + numero + "</h2><ul>";
+            for (var i = 1; i <= 10; i++) {
+                var resultado = numero * i;
+                tabuadaHTML += "<li>" + numero + " x " + i + " = " + resultado + "</li>";
+            }
+            tabuadaHTML += "</ul>";
+
+         
+            document.getElementById("tabuada").innerHTML = tabuadaHTML;
+        } else {
+     
+            alert(" Por favor, insira um número válido ");
+        }
+    }
+</script>
+
+</body>
+</html>

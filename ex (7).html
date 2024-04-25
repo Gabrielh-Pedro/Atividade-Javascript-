@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preço Final do Veículo - Exercício 7</title>
+</head>
+<body>
+
+<h2>Calculadora de Preço Final do Veículo</h2>
+
+<label for="precoFabrica">Preço de Fábrica:</label>
+<input type="number" id="precoFabrica"><br>
+
+<label for="porcentagemDistribuidor">% Distribuidor:</label>
+<input type="number" id="porcentagemDistribuidor"><br>
+
+<label for="porcentagemImpostos">% Impostos:</label>
+<input type="number" id="porcentagemImpostos"><br>
+
+<button onclick="calcularPrecoFinal()">Calcular</button>
+
+<div id="resultado"></div>
+
+<script>
+  function calcularPrecoFinal() {
+  
+    var precoFabrica = parseFloat(document.getElementById("precoFabrica").value);
+    var porcentagemDistribuidor = parseFloat(document.getElementById("porcentagemDistribuidor").value);
+    var porcentagemImpostos = parseFloat(document.getElementById("porcentagemImpostos").value);
+
+    
+    if (isNaN(precoFabrica) || isNaN(porcentagemDistribuidor) || isNaN(porcentagemImpostos)) {
+      document.getElementById("resultado").textContent = " Insira valores numéricos válidos ";
+      return;
+    }
+
+  
+    var precoFinal = precoFabrica + (precoFabrica * porcentagemDistribuidor / 100) + (precoFabrica * porcentagemImpostos / 100);
+
+  
+    document.getElementById("resultado").textContent = "Preço Final: R$" + precoFinal.toFixed(2);
+  }
+</script>
+
+</body>
+</html>
